@@ -67,16 +67,16 @@
 // +++++++++++++++++++++++++++++++++=========EP - 07 ++++++++++++++++++++++++++++++++++++++++
 
 
-function a(){
-    console.log(b);
-    c();
-    function c(){
-        console.log(b);
-    }
-}
+// function a(){
+//     console.log(b);
+//     c();
+//     function c(){
+//         console.log(b);
+//     }
+// }
 
-var b = 10;
-a();
+// var b = 10;
+// a();
 
 // these variables can be accessed because when the execution context is created , lexical env is created
 // the lexical env is the local memory with the lexical env of its parent
@@ -85,4 +85,125 @@ a();
 
 
 
-// +++++++++++++++++++++++++++++++++=========EP - 07 ++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++=========EP - 08 ++++++++++++++++++++++++++++++++++++++++
+
+// console.log(a);// a cannot be accessed
+// console.log(b);
+// var b = 1;
+// let a = 10;
+
+
+/////let a = 100; // duplicate redeclaration of let and const is not allowed in js
+
+
+/////var a = 100; // this also is not allowed
+
+
+
+// ====================
+
+// const xx = 1000;
+// xx = 100;
+
+// xx = 100;
+//    ^
+
+// TypeError: Assignment to constant variable.
+
+
+// +++++++++++++++++++++++++++++++++=========EP - 09 ++++++++++++++++++++++++++++++++++++++++
+// block scope
+
+
+
+{
+
+}
+// this is a block in js, also called as compound statement
+
+ 
+
+// block scope means all variables and funcs we can access inside the block.
+
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+// {
+//     var a = 1;
+//     let b = 2; // both b and c are in the block scope 
+//     const c = 3;
+// }
+
+// console.log(a);
+// console.log(b);// both b and c cannot be accessed since they are not in the global scope
+// console.log(c);
+
+// b,c are present inside teh block scope and not the global scope
+
+//  this tells that let and const are block scoped,
+
+// var a = 100;
+
+// {
+//     var a = 10;
+//     console.log(a);
+// }
+
+// console.log(a); // here also 10 is logged
+
+
+// in this the variable a inside the block shadows the variable outside the block and the value 10 is logged
+
+
+// let b = 100;
+
+// {
+//     let b = 10;
+//     console.log(b);// 10 is logged
+// }
+
+// console.log(b); // 100 is logged
+
+//==============
+
+// const c = 100;
+
+// {
+//     const c = 10;
+//     console.log(c);// 10 is logged
+// }
+
+// console.log(c); // 100 is logged
+
+
+// this shadowing also works same in functions also
+
+
+
+// const c = 100;
+
+// function x(){
+//     const c = 10;
+//     console.log(c);// 10 is logged
+// }
+// x();
+// console.log(c); // 100 is logged
+
+
+// ====================
+
+// Illegal shadowing
+
+// u cannot shadow a let using a var 
+
+//example, this is illegal shadowing
+// let  a = 10;
+
+// {
+//     var a = 110;
+// }
+
+
+
