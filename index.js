@@ -206,4 +206,7 @@
 // }
 
 
+// Lexical scope works the same way inside block scope also.
 
+
+// +++++++++++++++++++++++++++++++++=========EP -10 ++++++++++++++++++++++++++++++++++++++++
