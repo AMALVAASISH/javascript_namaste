@@ -210,3 +210,68 @@
 
 
 // +++++++++++++++++++++++++++++++++=========EP -10 ++++++++++++++++++++++++++++++++++++++++
+
+// function x(){
+//     var a = 7;
+//     function y(){
+//         console.log(a);
+//     }
+//     y();
+// }
+
+// x();
+
+// closure is function bundled with its lexical environment
+
+
+// there is a good article in the google docs, check it
+
+// function x(){
+//     var a = 7;
+//     function y(){
+//         console.log(a);
+//     }
+//     return y;
+// }
+
+// var z = x();
+// console.log(z);
+
+// z(); // 7 is logged, this is what closure does.
+
+//]]]]]]]]]]]]]]]]]]]]]
+
+// function x(){
+//     var a = 1;
+//     function y(){
+//         console.log(a);
+//     }
+//     a=100;
+//     return y;
+// }
+
+// var z = x();
+// console.log(z);
+
+// z();// 100 is logged because it is refering to the scope
+
+// ===============================================
+
+
+// function r(){
+//     var b = 100;
+//     function x(){
+//         var a = 1;
+//         function y(){
+//             console.log(a,b);
+//         }
+//         y();
+//     }
+//     x();
+// }
+
+// z(); // in this two closures will be created, x and y
+
+
+
+// +++++++++++++++++++++++++++++++++=========EP -11 ++++++++++++++++++++++++++++++++++++++++
