@@ -275,3 +275,31 @@
 
 
 // +++++++++++++++++++++++++++++++++=========EP -11 ++++++++++++++++++++++++++++++++++++++++
+
+// function x(){
+//     var i = 1;
+//     setTimeout(function (){ // the control does not wait over here
+//         console.log(i);
+//     },1000) // this creates a closure, and attaches a timer with the callback function
+//     console.log("hello");
+// }
+
+// x();
+
+
+//tricky question in js
+
+function x(){
+    for (var i = 1;i<=5;i++){
+        setTimeout(function (){
+            console.log(i); // it goes on logging 6, due to closures
+        }, i*1000)
+    }
+    console.log("hello")
+}
+
+x();
+
+//closure remembers the reference to i, not the value
+// js moves on and does not wait for these timers to expire, and the loops constantly runs
+
