@@ -289,17 +289,37 @@
 
 //tricky question in js
 
+// function x(){
+//     for (var i = 1;i<=5;i++){
+//         setTimeout(function (){
+//             console.log(i); // it goes on logging 6, due to closures
+//         }, i*1000)
+//     }
+//     console.log("hello")
+// }
+
+// x();
+
+//closure remembers the reference to i, not the value
+// js moves on and does not wait for these timers to expire, and the loops constantly runs
+
+// this can be avoided by using the let 
+
 function x(){
-    for (var i = 1;i<=5;i++){
+    for (let i = 1;i<=5;i++){
         setTimeout(function (){
-            console.log(i); // it goes on logging 6, due to closures
-        }, i*1000)
+            console.log(i);
+        },i*1000)
     }
-    console.log("hello")
+
+    console.log("hello");
 }
 
 x();
 
-//closure remembers the reference to i, not the value
-// js moves on and does not wait for these timers to expire, and the loops constantly runs
+// this works correctly because a block scope is created with the let keyword and every func will have its own
+// i variable value
+
+// trickier question
+// without using let , how can u achieve this 
 
