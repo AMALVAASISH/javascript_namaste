@@ -358,7 +358,6 @@
 // so this can lead to memory leaks when accumulated over time
 
 // garbage collector is a program that frees up the unutilised variables
- 
 
 
- 
+
