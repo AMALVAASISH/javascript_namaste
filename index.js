@@ -305,17 +305,17 @@
 
 // this can be avoided by using the let 
 
-function x(){
-    for (let i = 1;i<=5;i++){
-        setTimeout(function (){
-            console.log(i);
-        },i*1000)
-    }
+// function x(){
+//     for (let i = 1;i<=5;i++){
+//         setTimeout(function (){
+//             console.log(i);
+//         },i*1000)
+//     }
 
-    console.log("hello");
-}
+//     console.log("hello");
+// }
 
-x();
+// x();
 
 // this works correctly because a block scope is created with the let keyword and every func will have its own
 // i variable value
@@ -323,3 +323,42 @@ x();
 // trickier question
 // without using let , how can u achieve this 
 
+// function x(){
+//     for(var i = 1;i<5;i++){
+//         function close(i){
+//             setTimeout(function(){
+//                 console.log(i)
+//             },i*1000);
+//         }
+//         close(i);
+//     }
+// }
+
+// x();
+
+// a new copy of i is created everytime , the setTimeout is called
+
+
+// +++++++++++++++++++++++++++++++++=========EP -12 ++++++++++++++++++++++++++++++++++++++++
+
+
+// function outer(b){
+//     var a = 1;
+//     function inner(){
+//         console.log(a,b);
+//     }
+//     return inner;
+// }
+
+
+// outer("hello")(); // doubtle brackets makes the call of the inner function also
+
+// there is overconsumptio of memory when closures are used
+// bcoz those variables are not garbage collected, when the program expires,
+// so this can lead to memory leaks when accumulated over time
+
+// garbage collector is a program that frees up the unutilised variables
+ 
+
+
+ 
