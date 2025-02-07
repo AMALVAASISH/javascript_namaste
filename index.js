@@ -357,7 +357,62 @@
 // bcoz those variables are not garbage collected, when the program expires,
 // so this can lead to memory leaks when accumulated over time
 
-// garbage collector is a program that frees up the unutilised variables
+// garbage collector is a program that frees up the unutilised memory ,variables
 
 
 
+// +++++++++++++++++++++++++++++++++=========EP -13 ++++++++++++++++++++++++++++++++++++++++
+
+// function statement , also called function declaration
+
+// function a(){
+//     console.log("a called")
+// }
+// this way of creating a function is called function statement
+
+// function expression
+
+// b();
+
+// var b = function (){
+//     console.log("b called")
+// }
+
+// function can act as values
+// this way of writing is known as function expression
+
+// in func expression, when b is called before the function, hoisting is different
+// b is still undefined, it is only given the function ,when the code execution is done
+
+
+// anonymous functions
+
+// function () {
+ 
+// }
+
+// created where funcs are used as values
+
+
+// named function expression
+
+// var c = function yz(){
+
+// }
+
+// c();
+// yz();// this will give an error
+
+// difference between parameters and arguments
+
+// var v = function s(param1,param2){ // these are the parameters
+
+// }
+
+// v(1,3); // these are arguments
+
+
+// first class functions
+
+//	The ability to use functions as values is known as first class functions, passing , returning funcs
+// funcs are first class citizens, same as first class funcs
