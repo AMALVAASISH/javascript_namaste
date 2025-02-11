@@ -416,3 +416,31 @@
 
 //	The ability to use functions as values is known as first class functions, passing , returning funcs
 // funcs are first class citizens, same as first class funcs
+
+
+// +++++++++++++++++++++++++++++++++=========EP -14 ++++++++++++++++++++++++++++++++++++++++
+
+// what is callback function in javascript
+// function when passed into another func is called callback function
+// due to callback we can do async in js
+
+
+setTimeout(function(){
+    console.log("timer");
+},2000)
+
+function x(y){
+    console.log("x");
+    y();
+};
+
+
+x(function y(){
+    console.log("y");
+});
+
+
+// call stack is also known as main thread, everything in the browser is executed through the call stack only
+
+// we should always use async for time consuming functions, and the main thread should not be blocked
+
