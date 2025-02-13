@@ -463,16 +463,16 @@
 // this method is not secure, bcoz anything in the code can change its value
 
 
-function x(){  
-    let count = 0;
-    document.getElementById("clickMe").addEventListener("click", function xyz(){
-            console.log("button clicked", ++count)
-    })
+// function x(){  
+//     let count = 0;
+//     document.getElementById("clickMe").addEventListener("click", function xyz(){
+//             console.log("button clicked", ++count)
+//     })
 
-    return
-}
+//     return
+// }
 
-x();
+// x();
 
 // the function xyz has access to the count variable via the closure created by the x function.
 
@@ -481,5 +481,13 @@ x();
 // which contains the closures and global scope
 
 
-// time - 19.16
+// garbage collection and remove event listeners
+// eventlisteners are heavy ,they take up memory
+// even after the call stack is empty , the closures created by eventlisteners are still there
+
+// good practice is to remove event listener after usage
+
+
+// +++++++++++++++++++++++++++++++++=========EP -15 ++++++++++++++++++++++++++++++++++++++++
+
 
