@@ -425,22 +425,61 @@
 // due to callback we can do async in js
 
 
-setTimeout(function(){
-    console.log("timer");
-},2000)
+// setTimeout(function(){
+//     console.log("timer");
+// },2000)
 
-function x(y){
-    console.log("x");
-    y();
-};
+// function x(y){
+//     console.log("x");
+//     y();
+// };
 
 
-x(function y(){
-    console.log("y");
-});
+// x(function y(){
+//     console.log("y");
+// });
 
 
 // call stack is also known as main thread, everything in the browser is executed through the call stack only
 
 // we should always use async for time consuming functions, and the main thread should not be blocked
+
+// document.getElementById("clickMe").addEventListener("click", function xyz(){
+//     setTimeout(function (){
+//         console.log("button clicked")
+//     }, 2000)
+// })
+
+// xyz comes into the call stack when this is done
+
+
+// let count = 0;
+
+
+// document.getElementById("clickMe").addEventListener("click", function xyz(){
+//         console.log("button clicked", ++count)
+// })
+
+// this method is not secure, bcoz anything in the code can change its value
+
+
+function x(){  
+    let count = 0;
+    document.getElementById("clickMe").addEventListener("click", function xyz(){
+            console.log("button clicked", ++count)
+    })
+
+    return
+}
+
+x();
+
+// the function xyz has access to the count variable via the closure created by the x function.
+
+// inside the x function, in tab, there is eventlisteners tab, inside that
+// there is handler, which is the callback func, xyz() func
+// which contains the closures and global scope
+
+
+// time - 19.16
 
