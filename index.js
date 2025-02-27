@@ -491,3 +491,25 @@
 // +++++++++++++++++++++++++++++++++=========EP -15 ++++++++++++++++++++++++++++++++++++++++
 
 
+// event loop
+
+// function a(){
+//     console.log("a")
+// }
+// a();
+
+// console.log("hi")
+
+// not much was in this...more theory
+
+// ++++++++++++++++++++++++++++++++++++++++++++++EP-17++++++++++++++++++++++++++++++++++++++++
+
+console.log("start")
+
+setTimeout(function cb(){
+    console.log("hello")
+}, 0)
+
+console.log("end")
+
+// executed only after the gec is out of call stack
