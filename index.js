@@ -13,7 +13,7 @@
 
 // 2nd example
 
-
+    
 // console.log(getName)
 
 // function getName(){
@@ -323,20 +323,23 @@
 // trickier question
 // without using let , how can u achieve this 
 
-// function x(){
-//     for(var i = 1;i<5;i++){
-//         function close(i){
-//             setTimeout(function(){
-//                 console.log(i)
-//             },i*1000);
-//         }
-//         close(i);
-//     }
-// }
+function x(){
+    for(var i = 1;i<5;i++){
+        function close(i){
+            setTimeout(function(){
+                console.log(i)
+            },i*1000);
+        }
+        close(i);
+    }
+}
 
-// x();
+x();
 
 // a new copy of i is created everytime , the setTimeout is called
+
+//Instead of accessing the variable from the enclosing scope,
+//  passing it as an argument to a function creates a new copy in a different scope, preventing the closure issue.
 
 
 // +++++++++++++++++++++++++++++++++=========EP -12 ++++++++++++++++++++++++++++++++++++++++
