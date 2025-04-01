@@ -323,24 +323,25 @@
 // trickier question
 // without using let , how can u achieve this 
 
-function x(){
-    for(var i = 1;i<5;i++){
-        function close(i){
-            setTimeout(function(){
-                console.log(i)
-            },i*1000);
-        }
-        close(i);
-    }
-}
+// function x(){
+//     for(var i = 1;i<5;i++){
+//         function close(i){
+//             setTimeout(function(){
+//                 console.log(i)
+//             },i*1000);
+//         }
+//         close(i);
+//     }
+// }
 
-x();
+// x();
 
 // a new copy of i is created everytime , the setTimeout is called
 
 //Instead of accessing the variable from the enclosing scope,
 //  passing it as an argument to a function creates a new copy in a different scope, preventing the closure issue.
 
+// closure is not created , when passing as an argument
 
 // +++++++++++++++++++++++++++++++++=========EP -12 ++++++++++++++++++++++++++++++++++++++++
 
@@ -494,3 +495,145 @@ x();
 // +++++++++++++++++++++++++++++++++=========EP -15 ++++++++++++++++++++++++++++++++++++++++
 
 
+// +++++++++++++++++++++++++++++++++=========EP -16 ++++++++++++++++++++++++++++++++++++++++
+
+
+// +++++++++++++++++++++++++++++++++=========EP -17 ++++++++++++++++++++++++++++++++++++++++
+
+// console.log("start")
+
+
+// setTimeout(function cb(){
+//     console.log("hello")
+// }, 5000)
+
+
+// console.log("end")
+
+// let startDate = new Date().getTime();
+// let endDate = startDate;
+// while(endDate < startDate+10000){
+//     endDate = new Date().getTime();
+// }
+
+// // Suppose there are 1 million lines of code after the end console print statement, which take 10 s to complete
+
+// // Only after the global execution context is removed from the call stack, then only the event loop can move the 
+// // callback func to the call stack from the callback queue
+
+// console.log("while expires")
+
+
+// +++++++++++++++++++++++++++++++++=========EP -18 ++++++++++++++++++++++++++++++++++++++++
+
+// function y(){
+//     console.log("y is called")
+// }
+
+// function x(y){
+//     y()
+// }
+
+
+
+// how to calculate the area of circles, and the circumference ,diameter
+
+// const radius = [1,2,3,4]
+
+// const calculateArea = function(radius){
+//     const output = []
+//     for(let i = 0;i<radius.length;i++){
+//         output.push(Math.PI * radius[i] * radius[i])
+//     }
+//     return output
+// }
+
+// console.log(calculateArea(radius))
+
+// const calculateCircumference = function(radius){
+//     const output = []
+//     for(let i = 0;i<radius.length;i++){
+//         output.push(2*Math.PI * radius[i] )
+//     }
+//     return output
+// }
+
+// console.log(calculateCircumference(radius))
+
+// const calculateDiameter = function(radius){
+//     const output = []
+//     for(let i = 0;i<radius.length;i++){
+//         output.push(2 * radius[i] )
+//     }
+//     return output
+// }
+
+// console.log(calculateDiameter(radius))
+
+// this is normally how it is done by people in coding interviews
+// this is a common mistake by people
+
+// DRY principle - dont repeat yourself
+// it is violated here
+
+
+// const radius = [1,3,4,5]
+
+// const area = function(radius){
+//     return Math.PI * radius *  radius
+// }
+
+// const circumference = function(radius){
+//     return 2 * Math.PI * radius
+// }
+
+// const calculate = function(radius, logic){
+//     const output = []
+//     for(let i = 0;i<radius.length;i++){
+//         output.push(logic(radius[i]))
+//     }
+//     return output
+// }
+
+// console.log(calculate(radius, area))
+// console.log(calculate(radius, Circumference))
+
+// this above is the correct way
+
+
+const radius = [1,3,4,5]
+
+const area = function(radius){
+    return Math.PI * radius *  radius
+}
+
+console.log(radius.map(area))
+
+// to write the calculate func like map function, you can do like this below
+
+Array.prototype.calculate = function(arr, logic){
+    const output = []
+    for(let i = 0;i<arr.length;i++){
+        output.push(logic(arr[i]))
+    }
+    return output
+}
+
+radius.calculate(radius,area)
+
+// now this func calculate will be available on all the arrays you see
+
+
+// now to have arguments also similar to map func, calculate can be modified like this
+
+Array.prototype.calculate = function(logic){
+    const output = []
+    for(let i = 0;i<this.length;i++){
+        output.push(logic(this[i]))
+    }
+    return output
+}
+
+radius.calculate(area)
+
+// this will point to the array from which the func call is coming from
