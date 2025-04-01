@@ -601,39 +601,50 @@
 // this above is the correct way
 
 
-const radius = [1,3,4,5]
+// const radius = [1,3,4,5]
 
-const area = function(radius){
-    return Math.PI * radius *  radius
-}
+// const area = function(radius){
+//     return Math.PI * radius *  radius
+// }
 
-console.log(radius.map(area))
+// console.log(radius.map(area))
 
-// to write the calculate func like map function, you can do like this below
+// // to write the calculate func like map function, you can do like this below
 
-Array.prototype.calculate = function(arr, logic){
-    const output = []
-    for(let i = 0;i<arr.length;i++){
-        output.push(logic(arr[i]))
-    }
-    return output
-}
+// Array.prototype.calculate = function(arr, logic){
+//     const output = []
+//     for(let i = 0;i<arr.length;i++){
+//         output.push(logic(arr[i]))
+//     }
+//     return output
+// }
 
-radius.calculate(radius,area)
+// radius.calculate(radius,area)
 
 // now this func calculate will be available on all the arrays you see
 
 
 // now to have arguments also similar to map func, calculate can be modified like this
 
-Array.prototype.calculate = function(logic){
-    const output = []
-    for(let i = 0;i<this.length;i++){
-        output.push(logic(this[i]))
-    }
-    return output
-}
+// Array.prototype.calculate = function(logic){
+//     const output = []
+//     for(let i = 0;i<this.length;i++){
+//         output.push(logic(this[i]))
+//     }
+//     return output
+// }
 
-radius.calculate(area)
+// radius.calculate(area)
 
 // this will point to the array from which the func call is coming from
+
+// +++++++++++++++++++++++++++++++++=========EP -19 ++++++++++++++++++++++++++++++++++++++++
+
+const arr = [1,3,4,5]
+
+// one way
+const double = arr.map(function(a){
+    return a*2
+})
+
+console.log(double)
