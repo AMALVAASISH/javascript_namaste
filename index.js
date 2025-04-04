@@ -648,3 +648,6 @@ const double = arr.map(function(a){
 })
 
 console.log(double)
+
+
+// map func is used to transform an array
