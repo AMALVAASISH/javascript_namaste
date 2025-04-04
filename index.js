@@ -640,14 +640,186 @@
 
 // +++++++++++++++++++++++++++++++++=========EP -19 ++++++++++++++++++++++++++++++++++++++++
 
-const arr = [1,3,4,5]
+// const arr = [1,3,4,5]
 
-// one way
-const double = arr.map(function(a){
-    return a*2
-})
+// // one way
+// const double = arr.map(function(a){
+//     return a*2
+// })
 
-console.log(double)
+// console.log(double)
 
+// another way of writing map function
+
+// function doubling(x){
+//     return x*2
+// }
+
+// const output = arr.map(doubling)
+
+// console.log(doubling)
+
+
+// const arr = [1,3,4,5]
+
+// function binary(x){
+//     return x.toString(2)
+// }
+
+// const output = arr.map(binary)
+
+// const output2 = arr.map((x) => { // arrow functions
+//     return x.toString(2)
+// })
+
+
+// // since single it can be written like this also
+// // arr.map((x) => x.toString(2))
+
+
+
+// console.log(output)
 
 // map func is used to transform an array
+
+
+// filter func
+
+// basically used to filter contents inside an array
+
+
+// const arr = [1,2,3,4]
+
+// function isOdd(x){
+//     return x%2 // odd numbers only have reminders, even doesnt
+//     // so it returns odd numbers
+// }
+
+
+
+// const output = arr.filter(isOdd)// filter odd values
+
+// const output2 = arr.filter((x) => x > 4)
+
+// console.log(output)
+
+
+// reduce
+
+// used when all the values of array are taken and have to come up with a single value out of them
+
+// const arr = [1,2,3,4]
+
+// reduce takes two values
+// accumulator and current
+
+
+// sum 
+
+// const output = arr.reduce(function(acc, curr){
+//     acc = acc +  curr
+//     return acc
+// }, 0)
+
+// console.log(output)
+
+// //max
+
+// const output1 = arr.reduce(function(acc,curr){
+//     if(curr > acc){
+//         acc = curr
+//     }
+//     return acc
+// },0)
+
+// console.log(output1)
+
+
+// tricky map question
+
+// const users =[
+//     {firstName: "akshay",lastName: "saini",age: 26},
+//     {firstName: "amal",lastName: "va",age: 24},
+//     {firstName: "alan",lastName: "bebido",age: 26},
+//     {firstName: "karthik",lastName: "ps",age: 28}
+// ]
+
+// // list of full name of user
+// // ["akshay saini", "amal va"]
+
+// const output  = users.map(x => x.firstName + " "+ x.lastName)
+
+// console.log(output)
+
+
+// // tricky reduce
+
+// // if u need to iterate over an array and come up with a single value
+// // we use reduce
+
+
+// const users =[
+//     {firstName: "akshay",lastName: "saini",age: 26},
+//     {firstName: "amal",lastName: "va",age: 24},
+//     {firstName: "alan",lastName: "bebido",age: 26},
+//     {firstName: "karthik",lastName: "ps",age: 28}
+// ]
+
+
+// const output = users.reduce(function(acc,curr){
+//     // console.log(acc)
+//     if(acc[curr.age]){
+//         acc[curr.age]= ++acc[curr.age]
+//     }else{
+//         acc[curr.age] = 1
+//     }
+//     return acc
+    
+// },{}) // empty object
+
+// console.log(output)
+
+// find out the firstName of people less than 25
+
+// const users =[
+//     {firstName: "akshay",lastName: "saini",age: 26},
+//     {firstName: "amal",lastName: "va",age: 24},
+//     {firstName: "alan",lastName: "bebido",age: 26},
+//     {firstName: "karthik",lastName: "ps",age: 28}
+// ]
+
+
+// const output = users.filter(function(x){
+//     if(x.age < 25){
+//         return x.firstName
+//     }
+// })
+
+// const output1 = users.filter((x) => x.age < 25)
+
+// console.log(output)
+
+// // in these the whole objects are returned instead of the firstName
+
+
+// // so chaining is possible where map can be applied to the filter func
+
+// const output2 = users.filter((x) => x.age < 25).map((x) => x.firstName)
+
+// /// another way
+// const output2 = (users.filter(function(x){
+//     if(x.age < 25){
+//         return x.firstName
+//     }
+// })).map(function(y){
+//     return y.firstName
+// })
+
+// this can be done without chaining also, this is a homework
+
+// check the link in the docs for the article related to polyfills in reduce ,filter and map
+
+
+
+
+
