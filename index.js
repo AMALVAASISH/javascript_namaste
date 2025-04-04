@@ -819,7 +819,76 @@
 
 // check the link in the docs for the article related to polyfills in reduce ,filter and map
 
+// =====================================SEASON 2 ====================
+
+// =============================EP-01 | Callback Hell ================
+
+// console.log("first")
 
 
+// setTimeout(function(){
+//     console.log("insisde the setTimeout")
+// },2000)
+
+// // in this the callback fn is passed to the setTimeout
+
+// console.log("third")
+
+
+// ==========
+
+// const cart = ["shoes","pants","kurta"]
+
+// api.createOrder(cart,function (){ // cart - items
+
+//     api.proceedToPayment(
+        
+//         function(){
+//             api.showOrderSummary(
+                
+//                 function(){
+//                     api.updateWallet()
+//                 })
+//         })
+    
+// })
+
+// this is the callback hell
+
+// inversion of control occurs when we use callbacks
+// we lose control over our code
+
+// const cart = ["shoes","pants","kurta"]
+
+// api.createOrder(cart,function (){ // cart - items
+
+//     api.proceedToPayment(
+        
+//         function(){
+//             api.showOrderSummary(
+                
+//                 function(){
+//                     api.updateWallet()
+//                 })
+//         })
+    
+// })
+ 
+// here we dont what will happen in the createorder api, bcoz 
+// it maybe written by an intern, it may never call the cb func
+// so by this we can giving control of our code to this api, that we dont know
+
+// const cart = ["shoes","pants","kurta"]
+
+// api.createOrder(cart,function (){
+//     api.proceedToPayment()
+// })
+
+// async exits bcoz of callback func
+
+
+
+
+// =======================EP-02 | Promises======================
 
 
